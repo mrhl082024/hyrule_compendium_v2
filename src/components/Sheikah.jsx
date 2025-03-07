@@ -13,11 +13,13 @@ function Sheikah({ cache, loading, entryId }) {
           {cache[entryId] &&
             cache[entryId].map((data) => (
               <>
-                <div>
-                  <img src={data.image} alt="Image" />
+                <div id="sheikah-icon">
+                  <div id="sheikah-img">
+                    <img src={data.image} alt="Image" />
+                  </div>
+                  <p id="sheikah-id">{data.id} </p>
+                  <p id="sheikah-name">{data.name} </p>
                 </div>
-                <p>{data.id} </p>
-                <p>{data.name} </p>
               </>
             ))}
         </div>
