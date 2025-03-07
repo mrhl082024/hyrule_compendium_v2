@@ -10,7 +10,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState();
   const [entryId, setEntryId] = useState();
-  const [cache, setCache] = useState([]);
+  const [cache, setCache] = useState({});
 
   const apiCategory = [
     "Creatures",
@@ -19,8 +19,12 @@ function App() {
     "Monsters",
     "Treasure",
   ];
+  console.log(cache);
 
   useEffect(() => {
+    if (cache[entryId]) {
+      return;
+    }
     try {
       setLoading(true);
       fetch(
@@ -28,17 +32,23 @@ function App() {
       )
         .then((res) => res.json())
         .then((res) => {
-          setData(res);
+          console.log(res);
 
-          if (cache.map((obj) => obj.id === data.id).includes(true))
-            console.log("It's a dupe");
-          else {
-            setCache([...cache, data]);
-            console.log("Added data to cache");
-          }
+          setData(res.data);
+          console.log(entryId);
+
+          setCache({ ...cache, [`${entryId}`]: res.data });
+
+          // setCache(data);
+
+          // if (cache.map((obj) => obj.id === data.id).includes(true))
+          //   console.log("It's a dupe");
+          // else {
+          //   setCache([...cache, data]);
+          //   console.log(cache);
+          //   console.log("Added data to cache");
+          // }
         });
-      console.log("this is cache " + cache);
-      console.log("this is data " + data);
       console.log("Api called");
     } catch (error) {
       throw new Error(`Api call went wrong: ${error}`);

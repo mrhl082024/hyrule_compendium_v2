@@ -1,25 +1,25 @@
 import "../styles/Sheikah.css";
 function Sheikah({ cache, loading }) {
   console.log(loading);
-  console.log("sheikah cache" + cache);
+  console.log(cache);
 
   return (
     <>
       <div id="sheikah-card">
         test
-        {loading === false ? (
-          cache.map((data) => {
-            <div>
-              <div>
-                <img src={data.image} alt="image" />
-              </div>
-              <p>{data.id}</p>
-              <p>{data.name}</p>
-            </div>;
-          })
-        ) : (
+        {/* {loading === true ? (
           <p>Loading...</p>
-        )}
+        ) : (
+          cache.map((data) => (
+            <>
+              <div>
+                <img src={data.image} alt="Image" />
+              </div>
+              <p>{data.id} </p>
+              <p>{data.name} </p>
+            </>
+          ))
+        )} */}
       </div>
     </>
   );
