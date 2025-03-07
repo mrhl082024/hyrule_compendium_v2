@@ -20,21 +20,19 @@ function App() {
   ];
 
   useEffect(() => {
-    function fetchData() {
-      try {
-        setLoading(true);
-        //category = "Entry" or ["Creatures", "Equipment", "Materials", "Monsters", "Treasure"]
-        const response = fetch(
-          `https://botw-compendium.herokuapp.com/api/v3/compendium/${category.toLowercase()}/${entryId.toLowercase()}`
-        );
-        const result = response.json();
-        console.log(result);
-        setData(result);
-      } catch (error) {
-        console.log("Api call went wrong!");
-      } finally {
-        setLoading(false);
-      }
+    try {
+      setLoading(true);
+      //category = "Entry" or ["Creatures", "Equipment", "Materials", "Monsters", "Treasure"]
+      const response = fetch(
+        `https://botw-compendium.herokuapp.com/api/v3/compendium/${category.toLowercase()}/${entryId.toLowercase()}`
+      );
+      const result = response.json();
+      console.log(result);
+      setData(result);
+    } catch (error) {
+      console.log("Api call went wrong!");
+    } finally {
+      setLoading(false);
     }
   }, [category, entryId]);
 
@@ -42,7 +40,12 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigationbar />}>
+          <Route
+            path="/"
+            element={
+              <Navigationbar categories={apiCategory} loading={loading} />
+            }
+          >
             <Route path="index" element={<Homepage />} />
           </Route>
         </Routes>
