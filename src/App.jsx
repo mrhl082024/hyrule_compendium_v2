@@ -10,7 +10,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState();
   const [entryId, setEntryId] = useState();
-  const [cache, setCache] = useState();
+  const [cache, setCache] = useState([]);
 
   const apiCategory = [
     "Creatures",
@@ -29,7 +29,16 @@ function App() {
         .then((res) => res.json())
         .then((res) => {
           setData(res);
+
+          if (cache.map((obj) => obj.id === data.id).includes(true))
+            console.log("It's a dupe");
+          else {
+            setCache([...cache, data]);
+            console.log("Added data to cache");
+          }
         });
+      console.log("this is cache " + cache);
+      console.log("this is data " + data);
       console.log("Api called");
     } catch (error) {
       throw new Error(`Api call went wrong: ${error}`);
@@ -54,10 +63,8 @@ function App() {
           >
             <Route path="index" element={<Homepage />} />
             <Route
-              path="Sheikah"
-              element={<Sheikah />}
-              cache={cache}
-              loading={loading}
+              path="sheikah"
+              element={<Sheikah cache={cache} loading={loading} />}
             />
           </Route>
         </Routes>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "../styles/Navigationbar.css";
 
 function Navigationbar({ apiCategory, setCategory, setEntryId }) {
@@ -6,11 +6,13 @@ function Navigationbar({ apiCategory, setCategory, setEntryId }) {
     <>
       <div id="navigationbar-card">
         <div id="logo">
-          <img src="public/images/zelda-botw-logo.png" alt="" />
+          <Link to="/">
+            <img src="public/images/zelda-botw-logo.png" alt="" />
+          </Link>
         </div>
         <div id="category-btns">
           {apiCategory.map((categories) => (
-            <Link to="/Sheikah">
+            <Link to="/sheikah">
               <button
                 id="category-btn"
                 onClick={() => {
@@ -24,6 +26,7 @@ function Navigationbar({ apiCategory, setCategory, setEntryId }) {
           ))}
         </div>
       </div>
+      <Outlet />
     </>
   );
 }

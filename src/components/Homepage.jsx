@@ -6,10 +6,7 @@ import "../styles/Homepage.css";
 function Homepage() {
   return (
     <>
-      <div id="homepage-card">
-        <Navigationbar />
-        <Sheikah />
-      </div>
+      <div id="homepage-card">test</div>
     </>
   );
 }
