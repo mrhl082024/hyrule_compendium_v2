@@ -1,7 +1,11 @@
 function Navigationbar() {
   return (
     <>
-      <div></div>
+      <div id="navigationbar-card">
+        <div id="logo">
+          <img src="" alt="" />
+        </div>
+      </div>
     </>
   );
 }

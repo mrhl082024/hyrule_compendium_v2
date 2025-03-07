@@ -12,7 +12,6 @@ function App() {
   const [entryId, setEntryId] = useState();
 
   const apiCategory = [
-    "Entry",
     "Creatures",
     "Equipment",
     "Materials",
@@ -20,20 +19,22 @@ function App() {
     "Treasure",
   ];
 
-  useEffect(async () => {
-    try {
-      setLoading(true);
-      //category = "Entry" or ["Creatures", "Equipment", "Materials", "Monsters", "Treasure"]
-      const response = await fetch(
-        `https://botw-compendium.herokuapp.com/api/v3/compendium/${category.toLowercase()}/${entryId.toLowercase()}`
-      );
-      const result = response.json();
-      console.log(result);
-      setData(result);
-    } catch (error) {
-      console.log("Api call went wrong!");
-    } finally {
-      setLoading(false);
+  useEffect(() => {
+    function fetchData() {
+      try {
+        setLoading(true);
+        //category = "Entry" or ["Creatures", "Equipment", "Materials", "Monsters", "Treasure"]
+        const response = fetch(
+          `https://botw-compendium.herokuapp.com/api/v3/compendium/${category.toLowercase()}/${entryId.toLowercase()}`
+        );
+        const result = response.json();
+        console.log(result);
+        setData(result);
+      } catch (error) {
+        console.log("Api call went wrong!");
+      } finally {
+        setLoading(false);
+      }
     }
   }, [category, entryId]);
 
