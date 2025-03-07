@@ -22,9 +22,9 @@ function App() {
   console.log(cache);
 
   useEffect(() => {
-    if (cache[entryId]) {
-      return;
-    }
+    if (!category || !entryId) return;
+    if (cache[entryId]) return;
+
     try {
       setLoading(true);
       fetch(
@@ -33,21 +33,8 @@ function App() {
         .then((res) => res.json())
         .then((res) => {
           console.log(res);
-
           setData(res.data);
-          console.log(entryId);
-
           setCache({ ...cache, [`${entryId}`]: res.data });
-
-          // setCache(data);
-
-          // if (cache.map((obj) => obj.id === data.id).includes(true))
-          //   console.log("It's a dupe");
-          // else {
-          //   setCache([...cache, data]);
-          //   console.log(cache);
-          //   console.log("Added data to cache");
-          // }
         });
       console.log("Api called");
     } catch (error) {
