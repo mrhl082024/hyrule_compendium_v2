@@ -1,0 +1,14 @@
+#navigationbar-card {
+  margin: 1rem;
+  display: flex;
+  text-align: center;
+  align-items: flex-end;
+}
+#logo {
+  width: 220px;
+}
+#category-btn {
+  border: 1px solid green;
+  border-radius: 2rem;
+  color: rgb(214, 209, 198);
+}

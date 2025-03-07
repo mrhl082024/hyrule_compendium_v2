@@ -8,8 +8,8 @@ function App() {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState();
-  const [cache, setCache] = useState();
   const [entryId, setEntryId] = useState();
+  const [cache, setCache] = useState();
 
   const apiCategory = [
     "Creatures",
@@ -22,15 +22,16 @@ function App() {
   useEffect(() => {
     try {
       setLoading(true);
-      //category = "Entry" or ["Creatures", "Equipment", "Materials", "Monsters", "Treasure"]
-      const response = fetch(
-        `https://botw-compendium.herokuapp.com/api/v3/compendium/${category.toLowercase()}/${entryId.toLowercase()}`
-      );
-      const result = response.json();
-      console.log(result);
-      setData(result);
+      fetch(
+        `https://botw-compendium.herokuapp.com/api/v3/compendium/${category}/${entryId}`
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          setData(res);
+        });
+      console.log("Api called");
     } catch (error) {
-      console.log("Api call went wrong!");
+      throw new Error(`Api call went wrong: ${error}`);
     } finally {
       setLoading(false);
     }
@@ -43,7 +44,11 @@ function App() {
           <Route
             path="/"
             element={
-              <Navigationbar categories={apiCategory} loading={loading} />
+              <Navigationbar
+                apiCategory={apiCategory}
+                setCategory={setCategory}
+                setEntryId={setEntryId}
+              />
             }
           >
             <Route path="index" element={<Homepage />} />
