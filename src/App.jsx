@@ -19,7 +19,6 @@ function App() {
     "Monsters",
     "Treasure",
   ];
-  console.log(cache);
 
   useEffect(() => {
     if (!category || !entryId) return;
