@@ -10,7 +10,7 @@ function Navigationbar({ apiCategory, setCategory, setEntryId }) {
         </div>
         <div id="category-btns">
           {apiCategory.map((categories) => (
-            <Link>
+            <Link to="/Sheikah">
               <button
                 id="category-btn"
                 onClick={() => {
