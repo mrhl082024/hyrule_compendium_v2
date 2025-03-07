@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./styles/App.css";
 import Homepage from "./components/Homepage.jsx";
-import { useEffect, useState } from "react";
 import Navigationbar from "./components/Navigationbar.jsx";
+import Sheikah from "./components/Sheikah.jsx";
 
 function App() {
   const [data, setData] = useState();
@@ -52,6 +53,12 @@ function App() {
             }
           >
             <Route path="index" element={<Homepage />} />
+            <Route
+              pathP="sheikah"
+              element={<Sheikah />}
+              cache={cache}
+              loading={loading}
+            />
           </Route>
         </Routes>
       </BrowserRouter>

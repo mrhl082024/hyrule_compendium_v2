@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/Navigationbar.css";
 
 function Navigationbar({ apiCategory, setCategory, setEntryId }) {
@@ -9,15 +10,17 @@ function Navigationbar({ apiCategory, setCategory, setEntryId }) {
         </div>
         <div id="category-btns">
           {apiCategory.map((categories) => (
-            <button
-              id="category-btn"
-              onClick={() => {
-                setCategory("category");
-                setEntryId(categories.toLowerCase());
-              }}
-            >
-              {categories}
-            </button>
+            <Link>
+              <button
+                id="category-btn"
+                onClick={() => {
+                  setCategory("category");
+                  setEntryId(categories.toLowerCase());
+                }}
+              >
+                {categories}
+              </button>
+            </Link>
           ))}
         </div>
       </div>
