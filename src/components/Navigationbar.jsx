@@ -7,7 +7,7 @@ function Navigationbar({ apiCategory, setCategory, setEntryId }) {
       <div id="navigationbar-card">
         <div id="logo">
           <Link to="/">
-            <img src="public/images/zelda-botw-logo.png" alt="" />
+            <img src="/images/zelda-botw-logo.png" alt="" />
           </Link>
         </div>
         <div id="category-btns">

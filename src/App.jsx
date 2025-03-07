@@ -61,7 +61,9 @@ function App() {
             <Route path="index" element={<Homepage />} />
             <Route
               path="sheikah"
-              element={<Sheikah cache={cache} loading={loading} />}
+              element={
+                <Sheikah entryId={entryId} cache={cache} loading={loading} />
+              }
             />
           </Route>
         </Routes>
