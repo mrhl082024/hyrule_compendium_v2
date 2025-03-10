@@ -12,6 +12,7 @@ function App() {
   const [entryId, setEntryId] = useState();
   const [cache, setCache] = useState({});
   const [toggle, setToggle] = useState(false);
+  const [details, setDetails] = useState({});
 
   const apiCategory = [
     "Creatures",
@@ -62,7 +63,12 @@ function App() {
             <Route
               path="sheikah"
               element={
-                <Sheikah entryId={entryId} cache={cache} loading={loading} />
+                <Sheikah
+                  entryId={entryId}
+                  cache={cache}
+                  loading={loading}
+                  setDetails={setDetails}
+                />
               }
             />
           </Route>
