@@ -1,5 +1,6 @@
 import "../styles/Sheikah.css";
-function Sheikah({ cache, loading, entryId, setDetails }) {
+import Details from "./Details";
+function Sheikah({ cache, loading, entryId, details, setDetails }) {
   console.log(cache);
 
   return (
@@ -11,6 +12,7 @@ function Sheikah({ cache, loading, entryId, setDetails }) {
           id="sheikah-card"
           onClick={() => {
             setDetails();
+            console.log(details);
           }}
         >
           {console.log(cache)}

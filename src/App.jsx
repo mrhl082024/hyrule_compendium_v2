@@ -67,6 +67,7 @@ function App() {
                   entryId={entryId}
                   cache={cache}
                   loading={loading}
+                  details={details}
                   setDetails={setDetails}
                 />
               }
