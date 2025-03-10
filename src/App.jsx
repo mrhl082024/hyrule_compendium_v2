@@ -11,6 +11,7 @@ function App() {
   const [category, setCategory] = useState();
   const [entryId, setEntryId] = useState();
   const [cache, setCache] = useState({});
+  const [toggle, setToggle] = useState(false);
 
   const apiCategory = [
     "Creatures",
