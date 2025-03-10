@@ -1,5 +1,5 @@
 import "../styles/Sheikah.css";
-function Sheikah({ cache, loading, entryId }) {
+function Sheikah({ cache, loading, entryId, setDetails }) {
   console.log(cache);
 
   return (
@@ -7,7 +7,12 @@ function Sheikah({ cache, loading, entryId }) {
       {loading === true ? (
         <p>Loading...</p>
       ) : (
-        <div id="sheikah-card">
+        <div
+          id="sheikah-card"
+          onClick={() => {
+            setDetails();
+          }}
+        >
           {console.log(cache)}
 
           {cache[entryId] &&

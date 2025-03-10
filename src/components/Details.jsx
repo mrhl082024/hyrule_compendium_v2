@@ -1,7 +1,7 @@
 function Details({ details }) {
   return (
     <>
-      {toggle === true ? (
+      {toggle === true && (
         <div id="details-card">
           <h1>name</h1>
           <img src="" alt="" />
@@ -15,8 +15,6 @@ function Details({ details }) {
             <li>test</li>
           </ul>
         </div>
-      ) : (
-        false
       )}
     </>
   );
