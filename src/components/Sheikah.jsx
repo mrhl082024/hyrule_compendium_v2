@@ -8,26 +8,28 @@ function Sheikah({ cache, loading, entryId, details, setDetails }) {
       {loading === true ? (
         <p>Loading...</p>
       ) : (
-        <div id="sheikah-card">
+        <div>
           {console.log(cache)}
 
           {cache[entryId] &&
             cache[entryId].map((data) => (
               <>
-                <Link to="/details">
-                  <div
-                    id="sheikah-icon"
-                    onClick={() => {
-                      setDetails([data]);
-                    }}
-                  >
-                    <div id="sheikah-img">
-                      <img src={data.image} alt="Image" />
+                <div id="sheikah-card">
+                  <Link to="/details">
+                    <div
+                      id="sheikah-icon"
+                      onClick={() => {
+                        setDetails([data]);
+                      }}
+                    >
+                      <div id="sheikah-img">
+                        <img src={data.image} alt="Image" />
+                      </div>
+                      <p id="sheikah-id">{data.id} </p>
+                      <p id="sheikah-name">{data.name} </p>
                     </div>
-                    <p id="sheikah-id">{data.id} </p>
-                    <p id="sheikah-name">{data.name} </p>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               </>
             ))}
         </div>

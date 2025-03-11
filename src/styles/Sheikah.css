@@ -1,11 +1,16 @@
 #sheikah-card {
-  background-image: url(./public/images/sheikah_slate_empty.jpg);
-  width: 1280px;
-  height: 720px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(40, 40, 40, 0.5);
+  border: 2px solid green;
 }
+
 #sheikah-icon {
-  background: transparent;
+  border-radius: 4px;
 }
 #sheikah-img {
   width: 100px;
+}
+img {
+  border-radius: 2rem;
 }
