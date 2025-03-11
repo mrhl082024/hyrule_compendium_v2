@@ -1,23 +1,40 @@
 function Details({ details }) {
+  console.log(details);
+
   return (
     <>
       {details && (
         <div id="details-card">
-          <h1>{details.name} </h1>
-          <img src={details.image} alt="" />
-          <p>{details.description} </p>
-          <ul>
-            common locations:
-            {details.common_locations.map((location) => (
-              <li>{location}</li>
-            ))}
-          </ul>
-          <ul>
-            Drops:
-            {details.drops.map((drops) => (
-              <li>{drops}</li>
-            ))}
-          </ul>
+          {details.map((data) => (
+            <>
+              <h1>{data.name} </h1>
+              <img src={data.image} alt="" />
+              <p>{data.description} </p>
+              {console.clear()}
+              {console.log(data.drops)}
+              {data.common_locations && (
+                <>
+                  <p>common locations:</p>
+                  <ul>
+                    {data.common_locations.map((location, i) => (
+                      <li key={i}>{location}</li>
+                    ))}{" "}
+                  </ul>
+                </>
+              )}
+
+              {data.drops && data.drops[0] && (
+                <>
+                  <p>Drops:</p>
+                  <ul>
+                    {data.drops.map((drop, i) => (
+                      <li key={i}>{drop}</li>
+                    ))}{" "}
+                  </ul>
+                </>
+              )}
+            </>
+          ))}
         </div>
       )}
     </>

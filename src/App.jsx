@@ -4,6 +4,7 @@ import "./styles/App.css";
 import Homepage from "./components/Homepage.jsx";
 import Navigationbar from "./components/Navigationbar.jsx";
 import Sheikah from "./components/Sheikah.jsx";
+import Details from "./components/Details.jsx";
 
 function App() {
   const [data, setData] = useState();
@@ -12,7 +13,7 @@ function App() {
   const [entryId, setEntryId] = useState();
   const [cache, setCache] = useState({});
   const [toggle, setToggle] = useState(false);
-  const [details, setDetails] = useState({});
+  const [details, setDetails] = useState([]);
 
   const apiCategory = [
     "Creatures",
@@ -72,6 +73,7 @@ function App() {
                 />
               }
             />
+            <Route path="details" element={<Details details={details} />} />
           </Route>
         </Routes>
       </BrowserRouter>

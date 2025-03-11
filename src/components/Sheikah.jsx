@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
 import "../styles/Sheikah.css";
 import Details from "./Details";
 function Sheikah({ cache, loading, entryId, details, setDetails }) {
   console.log(cache);
-
   return (
     <>
       {loading === true ? (
@@ -14,18 +14,20 @@ function Sheikah({ cache, loading, entryId, details, setDetails }) {
           {cache[entryId] &&
             cache[entryId].map((data) => (
               <>
-                <div
-                  id="sheikah-icon"
-                  onClick={() => {
-                    setDetails(data);
-                  }}
-                >
-                  <div id="sheikah-img">
-                    <img src={data.image} alt="Image" />
+                <Link to="/details">
+                  <div
+                    id="sheikah-icon"
+                    onClick={() => {
+                      setDetails([data]);
+                    }}
+                  >
+                    <div id="sheikah-img">
+                      <img src={data.image} alt="Image" />
+                    </div>
+                    <p id="sheikah-id">{data.id} </p>
+                    <p id="sheikah-name">{data.name} </p>
                   </div>
-                  <p id="sheikah-id">{data.id} </p>
-                  <p id="sheikah-name">{data.name} </p>
-                </div>
+                </Link>
               </>
             ))}
         </div>
