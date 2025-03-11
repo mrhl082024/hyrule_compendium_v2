@@ -7,26 +7,25 @@ function Details({ details }) {
         <div id="details-card">
           {details.map((data) => (
             <>
-              <h1>{data.name} </h1>
-              <img src={data.image} alt="" />
-              <p>{data.description} </p>
-              {console.clear()}
-              {console.log(data.drops)}
+              <h1 id="name">{data.name} </h1>
+              <div id="img">
+                <img src={data.image} alt="" />
+              </div>
+              <p id="description">{data.description} </p>
               {data.common_locations && (
                 <>
-                  <p>common locations:</p>
-                  <ul>
+                  <ul id="locations">
+                    Common Locations:
                     {data.common_locations.map((location, i) => (
                       <li key={i}>{location}</li>
                     ))}{" "}
                   </ul>
                 </>
               )}
-
               {data.drops && data.drops[0] && (
                 <>
-                  <p>Drops:</p>
-                  <ul>
+                  <ul id="drops">
+                    Drops:
                     {data.drops.map((drop, i) => (
                       <li key={i}>{drop}</li>
                     ))}{" "}
