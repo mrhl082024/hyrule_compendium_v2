@@ -1,18 +1,22 @@
 function Details({ details }) {
   return (
     <>
-      {toggle === true && (
+      {details && (
         <div id="details-card">
-          <h1>name</h1>
-          <img src="" alt="" />
-          <p>description</p>
+          <h1>{details.name} </h1>
+          <img src={details.image} alt="" />
+          <p>{details.description} </p>
           <ul>
-            common locations
-            <li>test</li>
+            common locations:
+            {details.common_locations.map((location) => (
+              <li>{location}</li>
+            ))}
           </ul>
           <ul>
-            drops
-            <li>test</li>
+            Drops:
+            {details.drops.map((drops) => (
+              <li>{drops}</li>
+            ))}
           </ul>
         </div>
       )}

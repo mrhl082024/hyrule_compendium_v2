@@ -8,19 +8,18 @@ function Sheikah({ cache, loading, entryId, details, setDetails }) {
       {loading === true ? (
         <p>Loading...</p>
       ) : (
-        <div
-          id="sheikah-card"
-          onClick={() => {
-            setDetails();
-            console.log(details);
-          }}
-        >
+        <div id="sheikah-card">
           {console.log(cache)}
 
           {cache[entryId] &&
             cache[entryId].map((data) => (
               <>
-                <div id="sheikah-icon">
+                <div
+                  id="sheikah-icon"
+                  onClick={() => {
+                    setDetails(data);
+                  }}
+                >
                   <div id="sheikah-img">
                     <img src={data.image} alt="Image" />
                   </div>
