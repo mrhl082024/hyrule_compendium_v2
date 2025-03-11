@@ -2,9 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(40, 40, 40);
   font-family: hyrule-serif;
   color: white;
+}
+html {
+  background: url(public/images/zelda_botw_rock_climbing.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 @font-face {
   font-family: hyrule-serif;
@@ -15,9 +20,16 @@ img {
   height: 100%;
 }
 button {
+  background-color: rgb(40, 40, 40);
   height: 30px;
   width: 100px;
+  line-height: 20px;
+  text-align: center;
   font-size: 15px;
+  transition: 0.1s;
+}
+button:hover {
+  transform: scale(1.1);
 }
 p {
   background: transparent;

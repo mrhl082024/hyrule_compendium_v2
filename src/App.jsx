@@ -48,35 +48,37 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Navigationbar
-                apiCategory={apiCategory}
-                setCategory={setCategory}
-                setEntryId={setEntryId}
-              />
-            }
-          >
-            <Route path="index" element={<Homepage />} />
+      <div id="app-background">
+        <BrowserRouter>
+          <Routes>
             <Route
-              path="sheikah"
+              path="/"
               element={
-                <Sheikah
-                  entryId={entryId}
-                  cache={cache}
-                  loading={loading}
-                  details={details}
-                  setDetails={setDetails}
+                <Navigationbar
+                  apiCategory={apiCategory}
+                  setCategory={setCategory}
+                  setEntryId={setEntryId}
                 />
               }
-            />
-            <Route path="details" element={<Details details={details} />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+            >
+              <Route path="index" element={<Homepage />} />
+              <Route
+                path="sheikah"
+                element={
+                  <Sheikah
+                    entryId={entryId}
+                    cache={cache}
+                    loading={loading}
+                    details={details}
+                    setDetails={setDetails}
+                  />
+                }
+              />
+              <Route path="details" element={<Details details={details} />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
     </>
   );
 }
