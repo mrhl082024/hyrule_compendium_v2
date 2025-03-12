@@ -1,16 +1,44 @@
-#sheikah-card {
-  display: flex;
-  flex-direction: column;
+#sheikah {
   background-color: rgba(40, 40, 40, 0.5);
-  border: 2px solid green;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
-
+#sheikah-card {
+  width: fit-content;
+  margin: 10px;
+}
 #sheikah-icon {
+  display: grid;
+  grid-template-columns: 150px;
+  grid-template-rows: 150px 42px;
   border-radius: 4px;
 }
+#sheikah-id {
+  align-self: end;
+  margin: 0 0 2px 5px;
+  text-decoration: none;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width: 50px;
+}
 #sheikah-img {
-  width: 100px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+#sheikah-name {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  text-align: center;
 }
 img {
-  border-radius: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
 }

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "../styles/Sheikah.css";
-import Details from "./Details";
 function Sheikah({ cache, loading, entryId, details, setDetails }) {
   console.log(cache);
   return (
@@ -8,7 +7,7 @@ function Sheikah({ cache, loading, entryId, details, setDetails }) {
       {loading === true ? (
         <p>Loading...</p>
       ) : (
-        <div>
+        <div id="sheikah">
           {console.log(cache)}
 
           {cache[entryId] &&
