@@ -1,3 +1,5 @@
+import "../styles/Details.css";
+
 function Details({ details }) {
   console.log(details);
 
