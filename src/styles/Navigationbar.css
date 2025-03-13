@@ -5,16 +5,18 @@
   align-items: flex-end;
 }
 #logo {
+  min-width: 100px;
   width: 220px;
   margin: 1rem;
 }
 #category-btns {
-  width: 100%;
+  width: 600px;
   display: flex;
+  justify-content: space-evenly;
 }
 #category-btn {
   border: 1px solid green;
   border-radius: 2rem;
   color: rgb(214, 209, 198);
-  margin: 1rem;
+  margin-bottom: 2rem;
 }
