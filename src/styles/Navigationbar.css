@@ -15,7 +15,7 @@
   justify-content: space-evenly;
 }
 #category-btn {
-  border: 1px solid green;
+  border: 1px solid rgb(0, 170, 200);
   border-radius: 2rem;
   color: rgb(214, 209, 198);
   margin-bottom: 2rem;

@@ -10,6 +10,15 @@ function Details({ details }) {
           {details.map((data) => (
             <>
               <h1 id="name">{data.name} </h1>
+              <button
+                id="prev-page"
+                onClick={() => {
+                  window.history.go(-1);
+                  return false;
+                }}
+              >
+                {"<"}-- Prev
+              </button>
               <div id="img">
                 <img src={data.image} alt="" />
               </div>
