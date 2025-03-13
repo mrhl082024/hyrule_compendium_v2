@@ -1,8 +1,8 @@
 #sheikah {
   background-color: rgba(40, 40, 40, 0.5);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
 }
 #sheikah-card {
   width: fit-content;
