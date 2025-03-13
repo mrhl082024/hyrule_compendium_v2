@@ -4,6 +4,7 @@
   grid-template-rows: 40px 280px 120px;
   background-color: rgb(40, 40, 40, 0.7);
   justify-content: center;
+  height: 500px;
 }
 #name {
   grid-column-start: 1;
