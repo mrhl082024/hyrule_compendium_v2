@@ -13,7 +13,13 @@
   grid-template-columns: 150px;
   grid-template-rows: 150px 42px;
   border-radius: 4px;
+  transition: 0.1s;
 }
+#sheikah-icon:hover {
+  scale: 1.1;
+  border-radius: 1rem;
+}
+
 #sheikah-id {
   align-self: end;
   margin: 0 0 2px 5px;
