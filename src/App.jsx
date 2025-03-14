@@ -6,6 +6,7 @@ import Navigationbar from "./components/Navigationbar.jsx";
 import Sheikah from "./components/Sheikah.jsx";
 import Details from "./components/Details.jsx";
 import Hero from "./components/Hero.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   const [data, setData] = useState();
@@ -81,6 +82,7 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
+        <Footer />
       </div>
     </>
   );
