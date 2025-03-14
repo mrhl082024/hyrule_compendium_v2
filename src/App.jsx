@@ -5,6 +5,7 @@ import Homepage from "./components/Homepage.jsx";
 import Navigationbar from "./components/Navigationbar.jsx";
 import Sheikah from "./components/Sheikah.jsx";
 import Details from "./components/Details.jsx";
+import Hero from "./components/Hero.jsx";
 
 function App() {
   const [data, setData] = useState();
@@ -63,7 +64,7 @@ function App() {
                 />
               }
             >
-              <Route path="index" element={<Homepage />} />
+              <Route path="" element={<Homepage />} />
               <Route
                 path="sheikah"
                 element={
