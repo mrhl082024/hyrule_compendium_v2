@@ -20,6 +20,12 @@ function Navigationbar({ apiCategory, setCategory, setEntryId }) {
                   setEntryId(categories.toLowerCase());
                 }}
               >
+                <div id="button-img">
+                  <img
+                    src="public/images/sheikah_symbol.png"
+                    alt="sheikah-symbol"
+                  />
+                </div>
                 {categories}
               </button>
             </Link>

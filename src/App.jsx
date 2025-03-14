@@ -35,7 +35,10 @@ function App() {
         .then((res) => {
           console.log(res);
           setData(res.data);
-          setCache({ ...cache, [`${entryId}`]: res.data });
+          setCache({
+            ...cache,
+            [`${entryId}`]: res.data.toSorted((a, b) => a.id - b.id),
+          });
         });
       console.log("Api called");
     } catch (error) {
