@@ -11,6 +11,9 @@ html {
   background-attachment: fixed;
   background-size: cover;
 }
+main {
+  position: relative;
+}
 @font-face {
   font-family: hyrule-serif;
   src: url(/assets/HyliaSerifBeta-Regular.otf);

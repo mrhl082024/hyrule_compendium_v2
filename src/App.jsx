@@ -52,7 +52,7 @@ function App() {
 
   return (
     <>
-      <div id="app-background">
+      <main id="app-background">
         <BrowserRouter>
           <Routes>
             <Route
@@ -82,8 +82,10 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
+      </main>
+      <footer>
         <Footer />
-      </div>
+      </footer>
     </>
   );
 }

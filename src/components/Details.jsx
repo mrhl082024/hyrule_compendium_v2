@@ -1,4 +1,5 @@
 import "../styles/Details.css";
+import Footer from "./Footer";
 
 function Details({ details }) {
   console.log(details);
