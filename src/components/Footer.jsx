@@ -1,4 +1,5 @@
 import "../styles/Footer.css";
+import ghlogo from "/images/github-mark-white.png";
 function Footer() {
   return (
     <>
@@ -17,7 +18,7 @@ function Footer() {
             target="_blank"
           >
             My Github:
-            <img id="git-img" src="/images/github-mark-white.png" alt="" />
+            <img id="git-img" src={ghlogo} alt="" />
           </a>
         </div>
       </div>
