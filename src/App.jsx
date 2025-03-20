@@ -55,7 +55,7 @@ function App() {
       <main id="app-background">
         <BrowserRouter>
           <Routes>
-            <Route
+            {/* <Route
               path="/hyrule_compendium_v2"
               element={
                 <Navigationbar
@@ -64,22 +64,31 @@ function App() {
                   setEntryId={setEntryId}
                 />
               }
-            >
-              <Route path="" element={<Homepage />} />
-              <Route
-                path="sheikah"
-                element={
-                  <Sheikah
-                    entryId={entryId}
-                    cache={cache}
-                    loading={loading}
-                    details={details}
-                    setDetails={setDetails}
-                  />
-                }
-              />
-              <Route path="details" element={<Details details={details} />} />
-            </Route>
+            /> */}
+            <Route
+              path="/hyrule_compendium_v2"
+              element={
+                <Homepage
+                  apiCategory={apiCategory}
+                  setCategory={setCategory}
+                  setEntryId={setEntryId}
+                />
+              }
+            />
+            <Route
+              path="
+              sheikah"
+              element={
+                <Sheikah
+                  entryId={entryId}
+                  cache={cache}
+                  loading={loading}
+                  details={details}
+                  setDetails={setDetails}
+                />
+              }
+            />
+            <Route path="details" element={<Details details={details} />} />
           </Routes>
         </BrowserRouter>
       </main>

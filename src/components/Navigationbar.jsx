@@ -1,13 +1,15 @@
 import { Link, Outlet } from "react-router-dom";
 import "../styles/Navigationbar.css";
+import btnimg from "/public/sheikah_symbol.png";
+import zeldalogo from "/images/zelda-botw-logo.png";
 
 function Navigationbar({ apiCategory, setCategory, setEntryId }) {
   return (
     <>
       <div id="navigationbar-card">
         <div id="logo">
-          <Link to="/">
-            <img src="/public/images/zelda-botw-logo.png" alt="" />
+          <Link to="/hyrule_compendium_v2/">
+            <img src={zeldalogo} alt="" />
           </Link>
         </div>
         <div id="category-btns">
@@ -21,10 +23,7 @@ function Navigationbar({ apiCategory, setCategory, setEntryId }) {
                 }}
               >
                 <div id="button-img">
-                  <img
-                    src="/public/images/sheikah_symbol.png"
-                    alt="sheikah-symbol"
-                  />
+                  <img src={btnimg} alt="" />
                 </div>
                 {categories}
               </button>

@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import "../styles/Sheikah.css";
+import Navigationbar from "./Navigationbar.jsx";
 function Sheikah({ cache, loading, entryId, details, setDetails }) {
   console.log(cache);
   return (
     <>
+      <Navigationbar />
       {loading === true ? (
         <p>Loading...</p>
       ) : (
