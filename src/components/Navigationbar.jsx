@@ -7,7 +7,7 @@ function Navigationbar({ apiCategory, setCategory, setEntryId }) {
       <div id="navigationbar-card">
         <div id="logo">
           <Link to="/">
-            <img src="/images/zelda-botw-logo.png" alt="" />
+            <img src="/public/images/zelda-botw-logo.png" alt="" />
           </Link>
         </div>
         <div id="category-btns">
@@ -22,7 +22,7 @@ function Navigationbar({ apiCategory, setCategory, setEntryId }) {
               >
                 <div id="button-img">
                   <img
-                    src="public/images/sheikah_symbol.png"
+                    src="/public/images/sheikah_symbol.png"
                     alt="sheikah-symbol"
                   />
                 </div>

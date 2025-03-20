@@ -6,7 +6,7 @@
   color: rgb(240, 240, 240);
 }
 html {
-  background: url(public/images/zelda_botw_rock_climbing.jpg);
+  background: url(/public/images/zelda_botw_rock_climbing.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

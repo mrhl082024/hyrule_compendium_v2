@@ -19,7 +19,7 @@ function Footer() {
             My Github:
             <img
               id="git-img"
-              src="public/images/github-mark-white.png"
+              src="/public/images/github-mark-white.png"
               alt=""
             />
           </a>
