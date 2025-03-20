@@ -56,7 +56,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route
-              path="/"
+              path="/hyrule_compendium_v2"
               element={
                 <Navigationbar
                   apiCategory={apiCategory}

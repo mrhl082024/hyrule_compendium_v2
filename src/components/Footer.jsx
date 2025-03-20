@@ -17,11 +17,7 @@ function Footer() {
             target="_blank"
           >
             My Github:
-            <img
-              id="git-img"
-              src="/public/images/github-mark-white.png"
-              alt=""
-            />
+            <img id="git-img" src="/images/github-mark-white.png" alt="" />
           </a>
         </div>
       </div>
