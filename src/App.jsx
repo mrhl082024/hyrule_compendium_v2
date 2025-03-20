@@ -52,8 +52,16 @@ function App() {
 
   return (
     <>
-      <main id="app-background">
-        <BrowserRouter>
+      <BrowserRouter>
+        <header>
+          <Navigationbar
+            apiCategory={apiCategory}
+            setCategory={setCategory}
+            setEntryId={setEntryId}
+          />
+        </header>
+
+        <main id="app-background">
           <Routes>
             {/* <Route
               path="/hyrule_compendium_v2"
@@ -76,8 +84,7 @@ function App() {
               }
             />
             <Route
-              path="
-              sheikah"
+              path="/hyrule_compendium_v2/sheikah"
               element={
                 <Sheikah
                   entryId={entryId}
@@ -85,13 +92,16 @@ function App() {
                   loading={loading}
                   details={details}
                   setDetails={setDetails}
+                  apiCategory={apiCategory}
+                  setCategory={setCategory}
+                  setEntryId={setEntryId}
                 />
               }
             />
             <Route path="details" element={<Details details={details} />} />
           </Routes>
-        </BrowserRouter>
-      </main>
+        </main>
+      </BrowserRouter>
       <footer>
         <Footer />
       </footer>
